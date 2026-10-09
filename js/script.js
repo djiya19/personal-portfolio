@@ -64,23 +64,31 @@ window.addEventListener("scroll", revealSections);
 revealSections();
 
 // Back to Top Button
-const backToTopButton = document.getElementById("back-to-top");
 
-if (backToTopButton) {
-    window.addEventListener("scroll", function () {
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.getElementById("back-to-top");
+
+    if (!backToTopButton) return;
+
+    // Hide the button at the top of the page
+    function toggleBackToTop() {
         if (window.scrollY > 300) {
-            backToTopButton.style.display = "flex";
+            backToTopButton.classList.add("show");
         } else {
-            backToTopButton.style.display = "none";
+            backToTopButton.classList.remove("show");
         }
-    });
+    }
 
+    window.addEventListener("scroll", toggleBackToTop, { passive: true });
+
+    // Scroll smoothly to the top when clicked
     backToTopButton.addEventListener("click", function () {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
     });
-} else {
-    console.error("Back to Top button not found!");
-}
+
+    // Set the correct initial visibility
+    toggleBackToTop();
+});
