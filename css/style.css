@@ -605,27 +605,55 @@ footer {
 /* =========================
    BACK TO TOP BUTTON
 ========================= */
-
 #back-to-top {
     position: fixed;
-    bottom: 80px;
     right: 25px;
-
-    width: 50px;
-    height: 50px;
-
-    background-color: #38bdf8;
-    color: #0f172a;
-
-    border: none;
-    border-radius: 50%;
-
-    font-size: 27px;
-    cursor: pointer;
+    bottom: 80px;
+    z-index: 9999;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-size: 27px;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Tablet */
+@media (min-width: 651px) and (max-width: 1024px) {
+    #back-to-top {
+        right: 20px;
+        bottom: 20px;
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* Smartphone */
+@media (max-width: 650px) {
+    #back-to-top {
+        right: 15px;
+        bottom: 20px;
+        width: 48px;
+        height: 48px;
+    }
 }
