@@ -65,13 +65,11 @@ revealSections();
 
 // Back to Top Button
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const backToTopButton = document.getElementById("back-to-top");
 
     if (!backToTopButton) return;
-
-    // Always hide the button when the page loads
-    backToTopButton.classList.remove("show");
 
     function toggleBackToTop() {
         if (window.scrollY > 300) {
@@ -81,10 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    window.addEventListener("scroll", toggleBackToTop, {
-        passive: true
-    });
-
     backToTopButton.addEventListener("click", function () {
         window.scrollTo({
             top: 0,
@@ -92,5 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    window.addEventListener("scroll", toggleBackToTop, { passive: true });
     toggleBackToTop();
 });
