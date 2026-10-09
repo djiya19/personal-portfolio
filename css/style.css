@@ -613,9 +613,6 @@ footer {
     z-index: 9999;
 
     display: none;
-    align-items: center;
-    justify-content: center;
-
     width: 50px;
     height: 50px;
     border: none;
@@ -627,27 +624,26 @@ footer {
     cursor: pointer;
 }
 
-/* Show only after scrolling */
 #back-to-top.show {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Tablet */
-@media (min-width: 651px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     #back-to-top {
         right: 20px;
         bottom: 20px;
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
     }
 }
 
-/* Smartphone */
 @media (max-width: 650px) {
     #back-to-top {
         right: 15px;
         bottom: 20px;
-        width: 48px;
-        height: 48px;
+        width: 45px;
+        height: 45px;
     }
 }
