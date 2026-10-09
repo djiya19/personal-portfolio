@@ -605,13 +605,14 @@ footer {
 /* =========================
    BACK TO TOP BUTTON
 ========================= */
+
 #back-to-top {
     position: fixed;
     right: 25px;
     bottom: 80px;
     z-index: 9999;
 
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
@@ -624,18 +625,11 @@ footer {
     color: #0f172a;
     font-size: 27px;
     cursor: pointer;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Show only after scrolling */
 #back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    display: flex;
 }
 
 /* Tablet */
