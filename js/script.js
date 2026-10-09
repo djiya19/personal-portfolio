@@ -70,7 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!backToTopButton) return;
 
-    // Hide the button at the top of the page
+    // Always hide the button when the page loads
+    backToTopButton.classList.remove("show");
+
     function toggleBackToTop() {
         if (window.scrollY > 300) {
             backToTopButton.classList.add("show");
@@ -79,9 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    window.addEventListener("scroll", toggleBackToTop, { passive: true });
+    window.addEventListener("scroll", toggleBackToTop, {
+        passive: true
+    });
 
-    // Scroll smoothly to the top when clicked
     backToTopButton.addEventListener("click", function () {
         window.scrollTo({
             top: 0,
@@ -89,6 +92,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Set the correct initial visibility
     toggleBackToTop();
 });
