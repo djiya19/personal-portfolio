@@ -215,10 +215,6 @@ header {
     margin: 12px auto;
 }
 
-
-/* =========================
-   ABOUT
-========================= */
 /* =========================
    ABOUT SECTION
 ========================= */
@@ -508,6 +504,7 @@ footer {
 }
 
 
+
 /* =========================
    SMARTPHONE
 ========================= */
@@ -524,21 +521,15 @@ footer {
 
     .nav-links {
         display: none;
-
         position: absolute;
-
         top: 65px;
         left: 0;
-
         width: 100%;
-
         background-color: #0f172a;
-
         flex-direction: column;
-
         text-align: center;
-
         padding: 20px;
+        box-sizing: border-box;
     }
 
     .nav-links.active {
@@ -574,6 +565,29 @@ footer {
         font-size: 30px;
     }
 
+    /* ABOUT: photo first, text underneath */
+    .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .about-image {
+        width: 150px;
+        height: 150px;
+        flex: 0 0 150px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
     .skills-container,
     .projects-container {
         grid-template-columns: 1fr;
@@ -584,6 +598,7 @@ footer {
     .project-card,
     .timeline-item {
         padding: 25px;
+        box-sizing: border-box;
     }
 }
 
